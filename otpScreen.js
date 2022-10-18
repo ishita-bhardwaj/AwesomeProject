@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { nativeEvent ,StatusBar, View, Image, Text, SafeAreaView, Button, TouchableOpacity, Alert, StyleSheet, TextInput, ScrollView, Modal, } from 'react-native';
+import { nativeEvent ,StatusBar, View, Image, Text, SafeAreaView, Button, TouchableOpacity, StyleSheet, TextInput, ScrollView } from 'react-native';
 
 
-class otpScreen extends Component {
+class OtpScreen extends Component {
     constructor() {
         super();
         this.state = {
@@ -249,7 +249,7 @@ class otpScreen extends Component {
         );
     }
 }
-export default otpScreen;
+export default OtpScreen;
 
 const styles = StyleSheet.create({
     safeview: {

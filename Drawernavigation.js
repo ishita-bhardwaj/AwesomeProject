@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-// import Homescreen from './Homescreen';
+import Homescreen from './Homescreen';
 import App from './App';
 import screen from './screen';
 import screen2 from './screen2';
@@ -15,9 +15,9 @@ import {View,} from 'react-native'
     return (
         <NavigationContainer>
             <Drawer.Navigator initialRouteName="Home">
-                {/* <Drawer.Screen name="Home" component={Homescreen}
+                <Drawer.Screen name="Home" component={Homescreen}
                 
-                /> */}
+                />
                  <Drawer.Screen name="Assignment1" component={App} />
                 <Drawer.Screen name="Assignment2" component={screen} />
                 <Drawer.Screen name="Assignment3" component={screen2} />
