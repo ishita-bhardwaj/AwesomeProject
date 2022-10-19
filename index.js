@@ -1,13 +1,13 @@
-/**
- * @format
- */
-import {View,} from 'react-native'
-import {AppRegistry} from 'react-native';
-import App2 from './App2';
-import {name as appName} from './app.json';
-import DrawerNavigation from './Drawernavigation';
+// /**
+//  * @format
+//  */
+// import {View,} from 'react-native'
+// import {AppRegistry} from 'react-native';
+// import App2 from './App2';
+// import {name as appName} from './app.json';
+// import DrawerNavigation from './Drawernavigation';
 
-AppRegistry.registerComponent(appName, () => DrawerNavigation);
+// AppRegistry.registerComponent(appName, () => DrawerNavigation);
 
 // /**
 //  * @format
@@ -18,3 +18,14 @@ AppRegistry.registerComponent(appName, () => DrawerNavigation);
 //  import  Tabnavigation from './Tabnavigation';
  
 //  AppRegistry.registerComponent(appName, () => Tabnavigation);
+
+/**
+ * @format
+ */
+ import {View,} from 'react-native'
+ import {AppRegistry} from 'react-native';
+ import App2 from './App2';
+ import {name as appName} from './app.json';
+ import MenClothTab from './MenClothTab';
+ 
+ AppRegistry.registerComponent(appName, () => MenClothTab);
