@@ -7,6 +7,8 @@ import App from './App';
 import screen from './screen';
 import screen2 from './screen2';
 import otpScreen from './otpScreen';
+import WebViewActivity from './WebViewActivity';
+import WebViewSlider from './WebViewSlider';
 
 
 
@@ -17,10 +19,12 @@ function App2() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Home" component={Homescreen} />
-                <Stack.Screen name="Assignment1" component={App} />
-                <Stack.Screen name="Assignment2" component={screen} />
-                <Stack.Screen name="Assignment3" component={screen2} />
-                <Stack.Screen name="Assignment4" component={otpScreen} />
+                <Stack.Screen name="Counter" component={App} />
+                <Stack.Screen name="LoginScreen" component={screen} />
+                <Stack.Screen name="TicketBooking" component={screen2} />
+                <Stack.Screen name="Otpscreen" component={otpScreen} />
+                <Stack.Screen name="Webviewactivity" component={WebViewActivity} />
+                <Stack.Screen name="Webviewslider" component={WebViewSlider} />
                 
             </Stack.Navigator>
         </NavigationContainer>

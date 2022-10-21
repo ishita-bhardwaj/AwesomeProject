@@ -24,8 +24,8 @@
  */
  import {View,} from 'react-native'
  import {AppRegistry} from 'react-native';
- import App2 from './App2';
+
  import {name as appName} from './app.json';
- import MenClothTab from './MenClothTab';
+ import App2 from './App2';
  
- AppRegistry.registerComponent(appName, () => MenClothTab);
+ AppRegistry.registerComponent(appName, () => App2);

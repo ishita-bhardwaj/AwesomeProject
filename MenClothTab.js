@@ -8,21 +8,21 @@ import MenClothingPage from './MenClothingPage';
 class Categories extends React.Component{
     render(){
         return(
-            Alert.alert("Inside Category")
+            alert("Inside Category")
         );
     }
 }
 class MyCart extends React.Component{
     render(){
         return(
-            Alert.alert("Inside MY CART")
+            alert("Inside MY CART")
         );
     }
 }
 class Wishlist extends React.Component{
     render(){
         return(
-            Alert.alert("Inside Wishlist")
+            alert("Inside Wishlist")
         );
     }
 }
@@ -30,7 +30,7 @@ class Wishlist extends React.Component{
 class Account extends React.Component{
     render(){
         return(
-            Alert.alert("Inside Account")
+            alert("Inside Account")
         );
     }
 }

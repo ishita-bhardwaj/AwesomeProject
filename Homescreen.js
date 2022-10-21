@@ -4,6 +4,9 @@ import App from './App';
 import screen from './screen';
 import screen2 from './screen2';
 import otpScreen from './otpScreen';
+import WebViewActivity from './WebViewActivity';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer} from '@react-navigation/native';
 
 class Homescreen extends Component {
     constructor() {
@@ -19,7 +22,7 @@ class Homescreen extends Component {
                 <View style={styles.header}>
                     <TouchableOpacity
                         style={styles.assignOne}
-                        onPress={() => this.props.navigation.navigate('Assignment1')} >
+                        onPress={() => this.props.navigation.navigate('Counter')} >
                         <Text style={styles.submittext}>Assignment-1</Text>
 
                     </TouchableOpacity>
@@ -27,22 +30,36 @@ class Homescreen extends Component {
                 <View style={styles.header}>
                     <TouchableOpacity
                         style={styles.assignOne}
-                        onPress={() => this.props.navigation.navigate('Assignment2')}>
+                        onPress={() => this.props.navigation.navigate('LoginScreen')}>
                         <Text style={styles.submittext}>Assignment-2</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.header}>
                     <TouchableOpacity
                         style={styles.assignOne}
-                        onPress={() => this.props.navigation.navigate('Assignment3')} >
+                        onPress={() => this.props.navigation.navigate('TicketBooking')} >
                         <Text style={styles.submittext}>Assignment-3</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.header}>
                     <TouchableOpacity
                         style={styles.assignOne}
-                        onPress={() => this.props.navigation.navigate('Assignment4')} >
+                        onPress={() => this.props.navigation.navigate('Otpscreen')} >
                         <Text style={styles.submittext}>Assignment-4</Text>
+                    </TouchableOpacity>
+                    </View>
+                    <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('Webviewactivity')} >
+                        <Text style={styles.submittext}>Assignment-5</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('Webviewslider')} >
+                        <Text style={styles.submittext}>Assignment-6</Text>
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>
