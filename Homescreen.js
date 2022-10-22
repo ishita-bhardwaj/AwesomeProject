@@ -62,6 +62,13 @@ class Homescreen extends Component {
                         <Text style={styles.submittext}>Assignment-6</Text>
                     </TouchableOpacity>
                 </View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('SectionList')} >
+                        <Text style={styles.submittext}>Assignment-7</Text>
+                    </TouchableOpacity>
+                </View>
             </SafeAreaView>
 
 

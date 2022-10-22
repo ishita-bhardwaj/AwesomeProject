@@ -9,7 +9,7 @@ import screen2 from './screen2';
 import otpScreen from './otpScreen';
 import WebViewActivity from './WebViewActivity';
 import WebViewSlider from './WebViewSlider';
-
+import SectionLists from './SectionLists';
 
 
 const Stack = createNativeStackNavigator();
@@ -25,6 +25,7 @@ function App2() {
                 <Stack.Screen name="Otpscreen" component={otpScreen} />
                 <Stack.Screen name="Webviewactivity" component={WebViewActivity} />
                 <Stack.Screen name="Webviewslider" component={WebViewSlider} />
+                <Stack.Screen name="SectionList" component={SectionLists} />
                 
             </Stack.Navigator>
         </NavigationContainer>
