@@ -10,8 +10,8 @@ import otpScreen from './otpScreen';
 import WebViewActivity from './WebViewActivity';
 import WebViewSlider from './WebViewSlider';
 import SectionLists from './SectionLists';
-
-
+import AlertImplement from './AlertImplement';
+import ClipboardUI from './ClipboardUI';
 const Stack = createNativeStackNavigator();
 
 function App2() {
@@ -26,6 +26,8 @@ function App2() {
                 <Stack.Screen name="Webviewactivity" component={WebViewActivity} />
                 <Stack.Screen name="Webviewslider" component={WebViewSlider} />
                 <Stack.Screen name="SectionList" component={SectionLists} />
+                <Stack.Screen name="AlertImplement" component={AlertImplement} />
+                <Stack.Screen name="ClipboardUI" component={ClipboardUI} />
                 
             </Stack.Navigator>
         </NavigationContainer>

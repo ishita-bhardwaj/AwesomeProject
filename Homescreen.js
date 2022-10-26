@@ -5,6 +5,8 @@ import screen from './screen';
 import screen2 from './screen2';
 import otpScreen from './otpScreen';
 import WebViewActivity from './WebViewActivity';
+import AlertImplement from './AlertImplement';
+import ClipboardUI from './ClipboardUI';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer} from '@react-navigation/native';
 
@@ -67,6 +69,20 @@ class Homescreen extends Component {
                         style={styles.assignOne}
                         onPress={() => this.props.navigation.navigate('SectionList')} >
                         <Text style={styles.submittext}>Assignment-7</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('AlertImplement')} >
+                        <Text style={styles.submittext}>Assignment-8</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('ClipboardUI')} >
+                        <Text style={styles.submittext}>Assignment-9</Text>
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>
