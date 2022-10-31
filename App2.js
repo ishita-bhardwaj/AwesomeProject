@@ -12,12 +12,14 @@ import WebViewSlider from './WebViewSlider';
 import SectionLists from './SectionLists';
 import AlertImplement from './AlertImplement';
 import ClipboardUI from './ClipboardUI';
+import AnimImplement from './AnimImplement';
+import AnimationImplement from './AnimationImplement';
 const Stack = createNativeStackNavigator();
 
 function App2() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{headerShown: false}}>
                 <Stack.Screen name="Home" component={Homescreen} />
                 <Stack.Screen name="Counter" component={App} />
                 <Stack.Screen name="LoginScreen" component={screen} />
@@ -28,7 +30,8 @@ function App2() {
                 <Stack.Screen name="SectionList" component={SectionLists} />
                 <Stack.Screen name="AlertImplement" component={AlertImplement} />
                 <Stack.Screen name="ClipboardUI" component={ClipboardUI} />
-                
+                <Stack.Screen name="AnimImplement" component={AnimImplement} />
+                <Stack.Screen name="AnimationImplement" component={AnimationImplement} />
             </Stack.Navigator>
         </NavigationContainer>
     );

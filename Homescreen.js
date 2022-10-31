@@ -7,6 +7,8 @@ import otpScreen from './otpScreen';
 import WebViewActivity from './WebViewActivity';
 import AlertImplement from './AlertImplement';
 import ClipboardUI from './ClipboardUI';
+import AnimImplement from './AnimImplement';
+import AnimationImplement from './AnimationImplement';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer} from '@react-navigation/native';
 
@@ -18,6 +20,7 @@ class Homescreen extends Component {
     render() {
         return (
             <SafeAreaView style={styles.safearea}>
+              <ScrollView>
                 <View style={styles.header}>
                     <Text style={styles.headertext}>HOME SCREEN </Text>
                 </View>
@@ -85,6 +88,22 @@ class Homescreen extends Component {
                         <Text style={styles.submittext}>Assignment-9</Text>
                     </TouchableOpacity>
                 </View>
+
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('AnimImplement')} >
+                        <Text style={styles.submittext}>Assignment-10</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('AnimationImplement')} >
+                        <Text style={styles.submittext}>Assignment-11</Text>
+                    </TouchableOpacity>
+                </View>
+                </ScrollView>
             </SafeAreaView>
 
 
