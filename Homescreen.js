@@ -9,6 +9,8 @@ import AlertImplement from './AlertImplement';
 import ClipboardUI from './ClipboardUI';
 import AnimImplement from './AnimImplement';
 import AnimationImplement from './AnimationImplement';
+import FuncImplement from './FuncImplement';
+import Signup from './Signup';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer} from '@react-navigation/native';
 
@@ -101,6 +103,20 @@ class Homescreen extends Component {
                         style={styles.assignOne}
                         onPress={() => this.props.navigation.navigate('AnimationImplement')} >
                         <Text style={styles.submittext}>Assignment-11</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('FuncImplement')} >
+                        <Text style={styles.submittext}>Assignment-12</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.assignOne}
+                        onPress={() => this.props.navigation.navigate('Signup')} >
+                        <Text style={styles.submittext}>Assignment-13</Text>
                     </TouchableOpacity>
                 </View>
                 </ScrollView>
