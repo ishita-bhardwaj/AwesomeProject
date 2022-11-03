@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StatusBar, View, Image, Text, SafeAreaView, Button, TouchableOpacity, StyleSheet, TextInput, ScrollView } from 'react-native';
+import { AppRegistry, StatusBar, View, Image, Text, SafeAreaView, Button, TouchableOpacity, StyleSheet, TextInput, ScrollView ,AsyncStorage} from 'react-native';
 import App from './App';
 import screen from './screen';
 import screen2 from './screen2';
@@ -115,9 +115,17 @@ class Homescreen extends Component {
                 <View style={styles.header}>
                     <TouchableOpacity
                         style={styles.assignOne}
-                        onPress={() => this.props.navigation.navigate('Signup')} >
+                        onPress={async() => {
+
+                           const isLoggedIn=  await AsyncStorage.getItem('det');
+                            
+                                if(isLoggedIn)
+                                this.props.navigation.navigate('Getdata')
+else
+                            this.props.navigation.navigate('Signup')}} >
                         <Text style={styles.submittext}>Assignment-13</Text>
                     </TouchableOpacity>
+                   
                 </View>
                 </ScrollView>
             </SafeAreaView>

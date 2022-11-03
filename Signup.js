@@ -1,162 +1,113 @@
-
 import {
   SafeAreaView,
   Text,
   FlatList,
   Image,
   View,
-  TextInput, ImageBackground,
+  TextInput,
+  ImageBackground,
   TouchableOpacity,
   StyleSheet,
+  AsyncStorage,
 } from 'react-native';
 import React, {useRef, useState, Component} from 'react';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import styles from './Signupstyle';
+import Inptxt from './Inptxt';
+import Getdata from './Getdata';
+import {useCallback} from 'react';
 
-class OtpScreen extends Component {
-  constructor() {
-    super();
-  }
+const data = [
+  {
+    title: 'name',
+    image: require('./3177440.png'),
+    placeholder: 'Name',
+  },
+  {
+    title: 'email',
+    image: require('./526913.png'),
+    placeholder: 'Email',
+  },
+  {
+    title: 'phone',
+    image: require('./2948005.png'),
+    placeholder: 'Phone',
+  },
+  {
+    title: 'password',
+    image: require('./5672647.png'),
+    placeholder: 'Password',
+  },
+  {
+    title: 'confirmpassword',
+    image: require('./5672647.png'),
+    placeholder: 'Confirm Password',
+  },
+];
 
-  render() {
-    return (
-      <SafeAreaView style={styles.safeview}>
-          <ImageBackground
-            resizeMode={'stretch'}
-            source={require('/Users/ishitabhardwaj/Desktop/AwesomeProject/blue_background_picture_2_169441.jpg')}>
-            <View style={styles.main}>
-                <View style={styles.Head}>
-              <Text style={styles.Headtext}>Let's Get Started!</Text>
-              <Text style={styles.Headtext2}>Create an account to Q Allure to get all features</Text>
-              </View>
+const Signup = props => {
+  //const navigation=useNavigation();
+  const [titleText, setTitleText] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmpassword: '',
+  });
 
-              <View style={styles.Head}>
-                <View style={styles.box}>
-                <Image style={styles.icon} resizeMode={'contain'} source={require('/Users/ishitabhardwaj/Desktop/AwesomeProject/3177440.png')} /> 
-              <Text style={styles.text} >Jhone Williams</Text>
-              </View>
+  const changetext = (text, title) => {
+    setTitleText({...titleText, [title]: text});
+  };
 
-              <View style={styles.box1}>
-                <Image style={styles.icon} resizeMode={'contain'} source={require('/Users/ishitabhardwaj/Desktop/AwesomeProject/526913.png')} /> 
-                <TextInput style={styles.input} placeholder= 'Email'></TextInput>
-              </View>
+  const onPress = async () => {
+    await AsyncStorage.setItem('det', JSON.stringify(titleText));
+    try {
+      props.navigation.navigate('Getdata');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-              <View style={styles.box1}>
-                <Image style={styles.icon} resizeMode={'contain'} source={require('/Users/ishitabhardwaj/Desktop/AwesomeProject/2948005.png')} /> 
-                <TextInput style={styles.input} placeholder= 'Phone'></TextInput>
-              </View>
-              <View style={styles.box1}>
-                <Image style={styles.icon} resizeMode={'contain'} source={require('/Users/ishitabhardwaj/Desktop/AwesomeProject/5672647.png')} /> 
-                <TextInput style={styles.input} placeholder= 'Password'></TextInput>
-              </View>
-              <View style={styles.box1}>
-                <Image style={styles.icon} resizeMode={'contain'} source={require('/Users/ishitabhardwaj/Desktop/AwesomeProject/5672647.png')} /> 
-                <TextInput style={styles.input} placeholder= 'Confirm Password'></TextInput>
-              </View>
-              <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>
-              CREATE
+  return (
+    <View>
+      <ImageBackground
+        resizeMode={'stretch'}
+        source={require('/Users/ishitabhardwaj/Desktop/AwesomeProject/blue_background_picture_2_169441.jpg')}>
+        <View style={styles.main}>
+          <View style={styles.Head}>
+            <Text style={styles.Headtext}>Let's Get Started!</Text>
+            <Text style={styles.Headtext2}>
+              Create an account to Q Allure to get all features
             </Text>
+          </View>
+
+          {data.map((item, index) => (
+            <Inptxt
+              type={index}
+              onChangeInput={changetext}
+              title={item.title}
+              image={item.image}
+              placeholder={item.placeholder}></Inptxt>
+          ))}
+          <TouchableOpacity style={styles.button} onPress={
+           
+            onPress
+            
+          
+          
+          
+          }>
+            <Text style={styles.buttonText}>CREATE</Text>
           </TouchableOpacity>
           <View style={styles.bottom}>
-          <Text style={styles.bottomText}>Already have an account?</Text>
-          <Text style={styles.bottomText2}> Login here</Text>
-            </View>
+            <Text style={styles.bottomText}>Already have an account?</Text>
+            <Text style={styles.bottomText2}> Login here</Text>
+          </View>
+        </View>
+      </ImageBackground>
+    </View>
+  );
+};
 
-              </View>
-            </View>
-          </ImageBackground>
-      </SafeAreaView>
-    );
-  }
-}
-export default OtpScreen;
-
-const styles = StyleSheet.create({
-    safearea: {
-        flex: 1,
-    },
-main:{
-    height:"92%",
-    width:'92%',
-    //justifyContent:'center',
-    alignItems:'center',
-    borderRadius:15,
-    backgroundColor:'white',
-    margin:20,
-    padding:10
-
-},
-Head:{ 
-    //justifyContent:'space-around',
-    alignItems:'center',
-    paddingTop:22
-},
-Headtext:{
-    fontSize:25,
-    fontWeight:'bold'
-},
-Headtext2:{
-    fontSize:15,
-    color:'grey',
-    paddingTop:8
-},
-box:{
-    width:300,
-    height:60,
-    borderColor:'blue',
-    borderWidth:2,
-    borderRadius:50,
-    overflow:'hidden',
-    flexDirection:'row',
-    //justifyContent:'center'
-},
-icon:{
-    width:30,
-    height:30,
-    margin:10
-},
-text:{
-    fontSize:15,
-    color:'blue',
-    margin:10,
-    paddingTop:5
-},
-box1:{
-    width:300,
-    height:60,
-    borderColor:'lightgrey',
-    borderWidth:2,
-    borderRadius:50,
-    overflow:'hidden',
-    flexDirection:'row',
-    marginTop:20
-},
-button:{
-    width:200,
-    height:55,
-    backgroundColor:'blue',
-    borderRadius:50,
-    marginTop:30,
-    justifyContent:'center',
-    alignItems:'center'
-
-},
-buttonText:{
-    color:'white',
-    fontSize:18,
-    fontWeight:'bold'
-},
-bottom:{
-    flexDirection:'row',
-    alignItems:'center',
-    padding:30
-},
-bottomText:{
-color:'grey'
-},
-bottomText2:{
-color:'blue',
-fontWeight:'bold'
-}
-
-
-});
+export default Signup;

@@ -13,9 +13,11 @@ import SectionLists from './SectionLists';
 import AlertImplement from './AlertImplement';
 import ClipboardUI from './ClipboardUI';
 import Signup from './Signup';
+import Getdata from './Getdata';
 import AnimImplement from './AnimImplement';
 import AnimationImplement from './AnimationImplement';
 import FuncImplement from './FuncImplement';
+
 const Stack = createNativeStackNavigator();
 
 function App2() {
@@ -37,6 +39,9 @@ function App2() {
                 <Stack.Screen name="AnimationImplement" component={AnimationImplement} />
                 <Stack.Screen name="FuncImplement" component={FuncImplement} />
                 <Stack.Screen name="Signup" component={Signup} />
+                <Stack.Screen name="Getdata" component={Getdata} />
+                
+                
             </Stack.Navigator>
         </NavigationContainer>
     );
